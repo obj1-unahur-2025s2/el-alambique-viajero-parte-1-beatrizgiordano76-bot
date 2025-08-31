@@ -1,0 +1,41 @@
+import elAlambiqueViajero.*
+describe "Viajes de Luke" {
+    
+  test "Luke viaja a París con el alambique veloz" {
+        luke.cambiarVehiculo(alambiqueVeloz)
+        luke.viajarA(paris)
+        assert.equals(1, luke.cantidadDeLugaresVisitados())
+        assert.equals("llavero Torre Eiffel", luke.ultimoRecuerdo())
+    }
+
+    test "Luke intenta ir a Buenos Aires con alambique (falla)" {
+        luke.cambiarVehiculo(alambiqueVeloz)
+        luke.viajarA(buenosAires)
+        assert.equals(0, luke.cantidadDeLugaresVisitados())
+    }
+
+    test "Luke viaja a Buenos Aires con superChatarra" {
+        luke.cambiarVehiculo(superChatarraEspecial)
+        luke.viajarA(buenosAires)
+        assert.equals("mate con yerba", luke.ultimoRecuerdo())
+    }
+
+    test "Luke puede ir a Bagdad sin restricciones" {
+        luke.cambiarVehiculo(alambiqueVeloz)
+        luke.viajarA(bagdad)
+        assert.equals("réplica jardines colgantes", luke.ultimoRecuerdo())
+    }
+
+      test "Las Vegas homenajea a París" {
+        luke.cambiarVehiculo(superChatarraEspecial)
+        luke.viajarA(lasVegas)
+        assert.equals("llavero Torre Eiffel", luke.ultimoRecuerdo())
+    }
+
+
+    test "Luke viaja a Tokyo solo si el vehículo es rápido y con combustible" {
+        luke.cambiarVehiculo(superChatarraEspecial)
+        luke.viajarA(tokyo)
+        assert.equals("muñeco de Totoro", luke.ultimoRecuerdo())
+    }
+}
