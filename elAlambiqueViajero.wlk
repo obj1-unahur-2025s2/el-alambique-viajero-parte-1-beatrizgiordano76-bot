@@ -50,7 +50,7 @@ object antiguaBlindada {
     method tieneCombustible() = gangsters > 0
 
     method esRapido() = gangsters <= 1   
-
+}
 
 object paris {
     method recuerdo() = "llavero Torre Eiffel"
